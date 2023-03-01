@@ -9,6 +9,24 @@ public class StringProblemOnName {
 		System.out.println("Enter name : ");
 		String name = kb.nextLine();
 		
+		StringProblemOnName.printingName(name);
+	}
+	
+	public static void printingName(String name) {
+		if(name.length()==20) {
+			System.out.println(name);
+		}else if(name.length()>20) {
+			String newname = name;
+			for(int i = 1 ; i < name.length()-20 ; i++) {
+				newname = StringUtils.chop(newname);
+			}
+			System.out.println(newname);
+		}else if(name.length()<20) {
+			for(int i = 1 ; i <= (20-name.length()) ;i++) {
+				System.out.print("*");
+			}
+			System.out.println(name);
+		}
 	}
 
 }
